@@ -1,0 +1,13 @@
+# Create an infinite loop that will only exit when valid input is received
+while True:
+    user_input = input("Please enter text (no numbers): ")
+    
+    # Check if the input contains only alphabetic characters
+    if user_input.isalpha():
+        # If valid, convert to all caps and print the result
+        print(user_input.upper())
+        # Exit the loop
+        break
+    else:
+        # If invalid, print an error message and the loop will restart
+        print("Invalid input. Please do not type numbers and try again.")
