@@ -1,0 +1,30 @@
+import random
+
+def generate_random_number_game():
+    """
+    Asks the user for a maximum number, generates a random number between 
+    0 and that maximum, and allows the user to try again or quit.
+    """
+    while True:
+        try:
+            max_num_str = input("Enter the maximum number (a positive integer): ")
+            max_number = int(max_num_str)
+
+            if max_number < 0:
+                print("Please enter a positive integer for the maximum number.")
+                continue
+
+            random_number = random.randint(0, max_number)
+            print(f"A random number between 0 and {max_number} is: {random_number}")
+
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+            continue
+
+        play_again = input("Do you want to generate another random number? (y/n): ").lower()
+        if play_again != 'y':
+            print("Exiting the program. Goodbye!")
+            break
+
+if __name__ == "__main__":
+    generate_random_number_game()
