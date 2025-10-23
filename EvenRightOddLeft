@@ -1,0 +1,12 @@
+for i in range(10):
+    while True:
+        try:
+            num = int(input(f"Enter number {i+1} of 10: "))
+            break  # Exit the loop if input is a valid integer
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+
+    if num % 2 == 0:
+        print("right")
+    else:
+        print("left")
