@@ -1,0 +1,24 @@
+def sum_user_numbers():
+    """
+    Prompts the user for an unknown amount of numbers, sums them,
+    and prints the result. Ensures that only numerical input is accepted.
+    """
+    total_sum = 0
+    print("Enter numbers to add. Enter 'done' when finished.")
+
+    while True:
+        user_input = input("Enter a number: ")
+
+        if user_input.lower() == 'done':
+            break
+        
+        try:
+            number = float(user_input)  # Attempt to convert input to a float
+            total_sum += number
+        except ValueError:
+            print("Invalid input. Please enter a valid number or 'done'.")
+
+    print(f"The sum of the numbers is: {total_sum}")
+
+if __name__ == "__main__":
+    sum_user_numbers()
